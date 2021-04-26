@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.addEventListener("load",function () {
+            var name = document.querySelector(".username");
+
+            name.addEventListener("click",function (ev) {
+            //存储
+                localStorage.setItem("uname",name.value);
+            })
+
+            if(name.value!=null){
+            //加载页面后判断是否有过保存数据
+                name.value=localStorage.getItem("name");
+            }
+        });
+    </script>
+</head>
+<body>
+<input type="text" placeholder="输入用户名" class="username">
+<button id="#bc">保存</button>
+</body>
+</html>
